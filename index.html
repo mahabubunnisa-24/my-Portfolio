@@ -3,630 +3,211 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mahabubunnisa Sheik – Web Developer</title>
-  <meta name="description" content="Portfolio of Mahabubunnisa Sheik, a web developer from Andhra Pradesh.">
+  <meta name="description" content="Portfolio of Mahabubunnisa Sheik, a web developer.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap">
-  <style>
-    :root {
-      --bg: #0b1220;
-      --card: #141d33;
-      --ink: #e8edf8;
-      --muted: #a3b0cc;
-      --line: #26324f;
-      --accent: #7b9bff;
-      --green: #4cd1a1
-    }
-
-    * {
-      box-sizing: border-box
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 4.5rem
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font: 400 1.05rem/1.75 "IBM Plex Sans", Arial, sans-serif
-    }
-
-    h1,
-    h2,
-    h3,
-    p,
-    ul {
-      margin: 0
-    }
-
-    a {
-      color: inherit
-    }
-
-    .wrap {
-      max-width: 68rem;
-      margin: 0 auto;
-      padding: 0 1.5rem
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: "Bricolage Grotesque", Arial, sans-serif;
-      line-height: 1.15
-    }
-
-    /* header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(11, 18, 32, .92);
-      border-bottom: 1px solid var(--line)
-    }
-
-    header .wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: .5rem 1.5rem;
-      padding-top: 1rem;
-      padding-bottom: 1rem
-    }
-
-    .logo {
-      font-family: "Bricolage Grotesque", sans-serif;
-      font-weight: 800;
-      font-size: 1.25rem;
-      text-decoration: none
-    }
-
-    .logo span {
-      color: var(--accent)
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .4rem 1.5rem;
-      font-size: .95rem
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--muted)
-    }
-
-    nav a:hover {
-      color: var(--ink)
-    }
-
-    /* hero */
-    .hero {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 3.5rem;
-      align-items: center;
-      padding: 4rem 1.5rem 5rem
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      border: 1px solid var(--line);
-      background: var(--card);
-      border-radius: 2rem;
-      padding: .3rem 1rem;
-      font-size: .92rem;
-      margin-bottom: 1.5rem
-    }
-
-    .badge i {
-      width: .6rem;
-      height: .6rem;
-      border-radius: 50%;
-      background: var(--green)
-    }
-
-    .hello {
-      color: var(--muted);
-      font-size: 1.15rem
-    }
-
-    .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 4.2rem);
-      font-weight: 800;
-      letter-spacing: -.03em;
-      margin: .2rem 0 .6rem
-    }
-
-    .hero h2 {
-      font-size: clamp(1.3rem, 2.6vw, 1.7rem);
-      font-weight: 500;
-      color: var(--accent);
-      margin-bottom: 1.25rem
-    }
-
-    .hero .bio {
-      color: var(--muted);
-      max-width: 35rem
-    }
-
-    .btns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .75rem;
-      margin-top: 2rem
-    }
-
-    .btn {
-      display: inline-block;
-      padding: .8rem 1.5rem;
-      border-radius: .5rem;
-      font-weight: 500;
-      text-decoration: none;
-      border: 1.5px solid var(--accent)
-    }
-
-    .btn.fill {
-      background: var(--accent);
-      color: #0b1220
-    }
-
-    .btn.line {
-      color: var(--ink);
-      border-color: var(--ink)
-    }
-
-    .btn:hover {
-      opacity: .88
-    }
-
-    .pic {
-      display: flex;
-      justify-content: center
-    }
-
-    .frame {
-      position: relative;
-      width: min(21rem, 100%);
-      aspect-ratio: 4/5
-    }
-
-    .frame::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      transform: translate(1rem, 1rem);
-      border: 2px solid var(--accent);
-      border-radius: 1.5rem
-    }
-
-    .photo {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      border-radius: 1.5rem;
-      overflow: hidden;
-      background: var(--card);
-      border: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font: 800 4rem "Bricolage Grotesque", sans-serif;
-      color: var(--accent)
-    }
-
-    .photo img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover
-    }
-
-    /* sections */
-    section {
-      border-top: 1px solid var(--line);
-      padding: 4.5rem 0
-    }
-
-    .row {
-      display: grid;
-      grid-template-columns: 12rem 1fr;
-      gap: 1.5rem 3rem
-    }
-
-    .row>h2 {
-      font-size: 1.8rem
-    }
-
-    .text p {
-      max-width: 42rem;
-      color: var(--muted)
-    }
-
-    .text p+p {
-      margin-top: 1rem
-    }
-
-    .text p.lead {
-      color: var(--ink);
-      font-size: 1.2rem;
-      line-height: 1.6
-    }
-
-    .skill+.skill {
-      margin-top: 1.5rem
-    }
-
-    .skill h3 {
-      font-size: 1.05rem;
-      margin-bottom: .6rem
-    }
-
-    .chips {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: .5rem
-    }
-
-    .chips li {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 2rem;
-      padding: .15rem .9rem;
-      font-size: .93rem
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: .8rem;
-      padding: 1.5rem 1.75rem
-    }
-
-    .card+.card {
-      margin-top: 1.25rem
-    }
-
-    .card:hover {
-      border-color: var(--accent)
-    }
-
-    .card h3 {
-      font-size: 1.35rem
-    }
-
-    .tag {
-      color: var(--accent);
-      margin: .3rem 0 .8rem;
-      font-size: .97rem
-    }
-
-    .card ul {
-      padding-left: 1.2rem;
-      color: var(--muted)
-    }
-
-    .card li+li {
-      margin-top: .4rem
-    }
-
-    .card a {
-      display: inline-block;
-      margin-top: 1rem;
-      font-weight: 500;
-      color: var(--accent)
-    }
-
-    .meta {
-      color: var(--muted);
-      font-size: .95rem;
-      margin: .25rem 0 .6rem
-    }
-
-    .mail {
-      display: inline-block;
-      margin: .5rem 0 1.25rem;
-      font: 800 clamp(1.2rem, 3.6vw, 2.1rem) "Bricolage Grotesque", sans-serif;
-      overflow-wrap: anywhere;
-      text-decoration: underline;
-      text-decoration-color: var(--accent);
-      text-underline-offset: .35rem
-    }
-
-    .links {
-      display: flex;
-      gap: 1.5rem;
-      margin-top: 1.5rem
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 1.75rem 0;
-      color: var(--muted);
-      font-size: .9rem
-    }
-
-    @media (max-width:800px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding-top: 2.5rem
-      }
-
-      .pic {
-        order: -1
-      }
-
-      .frame {
-        width: min(16rem, 80%)
-      }
-
-      .row {
-        grid-template-columns: 1fr
-      }
-
-      section {
-        padding: 3.5rem 0
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body id="top">
+<body>
 
-  <header>
-    <div class="wrap">
-      <a class="logo" href="#top">MS<span>.</span></a>
-      <nav>
-        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
-        <a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
+  <header class="site-header">
+    <div class="bar">
+      <a class="logo" href="#top">Mahabubunnisa Sheik</a>
+      <button id="menu-btn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+      <nav id="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- FIRST PAGE -->
-    <div class="wrap hero">
-      <div>
-        <div class="badge"><i></i>Web Developer at HRA Groups Private Limited</div>
-        <p class="hello">Hello, I’m</p>
-        <h1>Mahabubunnisa Sheik</h1>
-        <h2>Web Developer</h2>
-        <p class="bio">I’m a web developer with a B.Tech in Computer Science and Engineering (2026). I build clean, fast
-          and user-friendly websites with React.js, Node.js and MongoDB, and I’m currently gaining hands-on experience
-          at HRA Groups Private Limited.</p>
-        <div class="btns">
-          <a href="./resume.pdf" download="Mahabubunnisa_Resume.pdf" class="btn fill">
-            Download Resume </a>
-          <a class="btn line" href="#projects">View my work</a>
-        </div>
-      </div>
-      <div class="pic">
-        <div class="frame">
-          <div class="photo">
-            <img src="./images/image.jpg" alt="Mahabubunnisa Sheik">
-          </div>
-        </div>
-      </div>
-    </div>
+  <main id="top">
 
-    <!-- ABOUT -->
+    <section class="hero">
+      <h1>I turn ideas into fast, clean websites people love to use.</h1>
+      <p>Hi, I'm Mahabubunnisa Sheik, a web developer from Narsapuram, Andhra Pradesh, ready to start my career.</p>
+      <a class="button" href="#projects">See my projects</a>
+      <a class="button ghost" href="https://github.com/mahabubunnisa">GitHub</a>
+    </section>
+
     <section id="about">
-      <div class="wrap row">
-        <h2>About me</h2>
-        <div class="text">
-          <p class="lead">I’m a Computer Science graduate who builds reliable web applications from the first line of
-            code to deployment.</p>
-          <p>I hold a B.Tech in Computer Science and Engineering (2022–2026) from Swarnandhra College of Engineering
-            &amp; Technology. I enjoy solving problems, debugging carefully and writing software that is easy to use and
-            easy to maintain.</p>
-          <p>I have independently designed, built and deployed three end-to-end applications across the MERN stack,
-            responsive web and desktop platforms. I’m currently working as a Web Developer Intern at HRA Groups Private
-            Limited, and I’m eager to keep growing on real projects with an experienced team.</p>
-        </div>
-      </div>
+      <h2>About me</h2>
+      <p>
+        I have a B.Tech in Computer Science and Engineering (2026).<br>
+        I enjoy solving problems and writing code that is simple and reliable.<br>
+        I have designed, built and deployed three projects on my own.<br>
+        I'm currently a Web Developer Intern at HRA Groups Private Limited.<br>
+        I'm open to new web developer opportunities where I can keep learning.
+      </p>
+      <p>
+        I have independently built and deployed three end-to-end applications,
+        and I work well in teams on collaborative academic projects.
+      </p>
     </section>
-
-    <!-- SKILLS -->
     <section id="skills">
-      <div class="wrap row">
-        <h2>Skills</h2>
-        <div>
-          <div class="skill">
-            <h3>Frontend</h3>
-            <ul class="chips">
-              <li>React.js</li>
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>Tailwind CSS</li>
-              <li>Responsive Web Design</li>
-            </ul>
-          </div>
-          <div class="skill">
-            <h3>Backend and database</h3>
-            <ul class="chips">
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>RESTful APIs</li>
-              <li>MongoDB</li>
-              <li>Mongoose</li>
-              <li>MySQL</li>
-            </ul>
-          </div>
-          <div class="skill">
-            <h3>Languages</h3>
-            <ul class="chips">
-              <li>JavaScript</li>
-              <li>Python</li>
-              <li>SQL</li>
-              <li>Java</li>
-            </ul>
-          </div>
-          <div class="skill">
-            <h3>Tools and deployment</h3>
-            <ul class="chips">
-              <li>Git</li>
-              <li>GitHub</li>
-              <li>VS Code</li>
-              <li>Postman</li>
-              <li>npm</li>
-              <li>MongoDB Compass</li>
-              <li>Jupyter Notebook</li>
-              <li>Vercel</li>
-              <li>Render</li>
-            </ul>
-          </div>
-          <div class="skill">
-            <h3>Concepts</h3>
-            <ul class="chips">
-              <li>OOP</li>
-              <li>Data Structures &amp; Algorithms</li>
-              <li>DBMS</li>
-              <li>SDLC</li>
-              <li>Agile</li>
-              <li>CRUD Operations</li>
-            </ul>
-          </div>
-          <div class="skill">
-            <h3>Soft skills</h3>
-            <ul class="chips">
-              <li>Communication</li>
-              <li>Teamwork</li>
-              <li>Problem-solving</li>
-              <li>Time management</li>
-              <li>Adaptability</li>
-              <li>Attention to detail</li>
-            </ul>
-          </div>
-        </div>
+      <h2>Technical Skills</h2>
+
+      <div class="skill-category">
+        <h3>Frontend Development</h3>
+        <ul class="chips">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>React.js</li>
+          <li>Tailwind CSS</li>
+          <li>Responsive Web Design</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h3>Backend Development</h3>
+        <ul class="chips">
+          <li>RESTful API Design</li>
+          <li>Node.js</li>
+          <li>Express.js</li>
+          <li>CRUD Operations</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h3>Database</h3>
+        <ul class="chips">
+          <li>MongoDB</li>
+          <li>Mongoose</li>
+          <li>MySQL</li>
+          <li>MongoDB Compass</li>
+          <li>DBMS</li>
+          <li>SQL</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h3>Programming Languages</h3>
+        <ul class="chips">
+          <li>Python</li>
+          <li>Java</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h3>Tools &amp; Technologies</h3>
+        <ul class="chips">
+          <li>Git</li>
+          <li>GitHub</li>
+          <li>VS Code</li>
+          <li>Jupyter Notebook</li>
+          <li>Vercel</li>
+          <li>Render</li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <h3>Core Concepts</h3>
+        <ul class="chips">
+          <li>OOP</li>
+          <li>Data Structures &amp; Algorithms</li>
+          <li>SDLC</li>
+          <li>Agile</li>
+        </ul>
       </div>
     </section>
 
-    <!-- PROJECTS -->
+
+
     <section id="projects">
-      <div class="wrap row">
-        <h2>Projects</h2>
-        <div>
-          <article class="card">
-            <h3>Movie Explorer</h3>
-            <p class="tag">React.js, Node.js, Express.js, MongoDB</p>
-            <ul>
-              <li>Built a responsive movie discovery interface where users search, browse and view details across
-                thousands of movies.</li>
-              <li>Created REST APIs with Node.js and Express.js, and managed the database with Mongoose and MongoDB
-                Compass.</li>
-            </ul>
-            <a href="https://github.com/mahabubunnisa">View on GitHub</a>
-          </article>
-          <article class="card">
-            <h3>Expense Tracker</h3>
-            <p class="tag">HTML5, CSS3, JavaScript, Tailwind CSS</p>
-            <ul>
-              <li>Built a mobile-friendly app to add, edit, delete and categorize expenses.</li>
-              <li>Added category-wise filtering so users can see their spending patterns.</li>
-            </ul>
-            <a href="https://github.com/mahabubunnisa">View on GitHub</a>
-          </article>
-          <article class="card">
-            <h3>Real-Time Weather Application</h3>
-            <p class="tag">Python, Tkinter, OpenWeatherMap API</p>
-            <ul>
-              <li>Designed a desktop app that shows live weather data from a REST API.</li>
-              <li>Added input validation and error handling to make it reliable.</li>
-            </ul>
-            <a href="https://github.com/mahabubunnisa">View on GitHub</a>
-          </article>
-        </div>
-      </div>
+      <h2>Projects</h2>
+
+      <article class="item">
+        <h3>Movie Explorer</h3>
+        <p class="meta">React.js, MongoDB</p>
+        <ul>
+          <li>Built a responsive interface where users search, browse and view details across thousands of movies.</li>
+          <li>Created REST APIs and managed the database with Mongoose and MongoDB Compass.</li>
+        </ul>
+        <a href="https://github.com/mahabubunnisa">View on GitHub</a>
+      </article>
+
+      <article class="item">
+        <h3>Expense Tracker</h3>
+        <p class="meta">HTML5, CSS3, JavaScript, Tailwind CSS</p>
+        <ul>
+          <li>Built a mobile-friendly app to add, edit, delete and categorize expenses.</li>
+          <li>Added category-wise filtering so users can see their spending patterns.</li>
+        </ul>
+        <a href="https://github.com/mahabubunnisa">View on GitHub</a>
+      </article>
+
+      <article class="item">
+        <h3>Real-Time Weather Application</h3>
+        <p class="meta">Python, Tkinter, OpenWeatherMap API</p>
+        <ul>
+          <li>Designed a desktop app that shows live weather data from a REST API.</li>
+          <li>Added input validation and error handling to make it reliable.</li>
+        </ul>
+        <a href="https://github.com/mahabubunnisa">View on GitHub</a>
+      </article>
     </section>
 
-    <!-- EXPERIENCE -->
     <section id="experience">
-      <div class="wrap row">
-        <h2>Experience</h2>
-        <div>
-          <article class="card">
-            <h3>Web Developer Intern</h3>
-            <p class="meta">HRA Groups Private Limited · Present</p>
-            <p style="color:var(--muted)">Working on real web projects, building and improving responsive, user-friendly
-              websites.</p>
-          </article>
-          <article class="card">
-            <h3>DevOps &amp; Cloud Automation Intern</h3>
-            <p class="meta">AICTE – EduSkills · Jan – Mar 2026</p>
-            <p style="color:var(--muted)">Completed a 10-week virtual internship through the National Internship Portal
-              and earned an Outstanding (O) grade, gaining exposure to DevOps practices and cloud automation workflows.
-            </p>
-          </article>
-        </div>
-      </div>
+      <h2>Experience and education</h2>
+
+      <article class="item">
+        <h3>DevOps &amp; Cloud Automation Intern</h3>
+        <p class="meta">AICTE – EduSkills, Jan – Mar 2026</p>
+        <p>Completed a 10-week virtual internship through the National Internship Portal and earned an Outstanding (O)
+          grade.</p>
+      </article>
+      <article class="item">
+        <h3>Web Developer Intern</h3>
+        <p class="meta">HRA Groups Private Limited | Present</p>
+        <ul>
+          <li>Currently working as a Web Developer Intern, gaining practical experience in web development.</li>
+          <li>Developing and improving responsive web pages using HTML, CSS, JavaScript, and React.js.</li>
+          <li>Learning to build user-friendly interfaces and improve website functionality.</li>
+          <li>Collaborating with team members and improving technical and problem-solving skills.</li>
+        </ul>
+      </article>
+
+
+      <article class="item">
+        <h3>B.Tech, Computer Science and Engineering</h3>
+        <p class="meta">Swarnandhra College of Engineering &amp; Technology, 2022 – 2026</p>
+        <p>CGPA: 8.1 / 10</p>
+      </article>
+
+      <article class="item">
+        <h3>Certifications</h3>
+        <ul>
+          <li>NPTEL – Joy of Computing Using Python (2024)</li>
+          <li>Infosys + ICT Academy – Robotic Process Automation (RPA)</li>
+        </ul>
+      </article>
     </section>
 
-    <!-- EDUCATION -->
-    <section id="education">
-      <div class="wrap row">
-        <h2>Education</h2>
-        <div>
-          <article class="card">
-            <h3>B.Tech, Computer Science and Engineering</h3>
-            <p class="meta">Swarnandhra College of Engineering &amp; Technology · 2022 – 2026</p>
-            <p style="color:var(--muted)">CGPA: 8.1 / 10</p>
-          </article>
-          <article class="card">
-            <h3>Intermediate (XII)</h3>
-            <p class="meta">Sri Gowthami College · 2020 – 2022</p>
-          </article>
-          <article class="card">
-            <h3>SSC (X)</h3>
-            <p class="meta">Municipal High School · 2020</p>
-          </article>
-          <article class="card">
-            <h3>Certifications</h3>
-            <ul>
-              <li>NPTEL – Joy of Computing Using Python (2024)</li>
-              <li>Infosys + ICT Academy – Robotic Process Automation (RPA)</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
     <section id="contact">
-      <div class="wrap row">
-        <h2>Contact</h2>
-        <div class="text">
-          <p>I’m open to Web Developer opportunities. Send me an email or find me online.</p>
-          <a class="mail" href="mailto:mahabubunnisa603@gmail.com">mahabubunnisa603@gmail.com</a>
-          <div class="btns" style="margin-top:0">
-            <a class="btn fill" href="C:\Users\Admin\Downloads\resume.pdf" download>Download resume</a>
-          </div>
-          <div class="links">
-            <a href="https://linkedin.com/in/mahabubunnisa-sheik">LinkedIn</a>
-            <a href="https://github.com/mahabubunnisa">GitHub</a>
-          </div>
-        </div>
-      </div>
+      <h2>Contact</h2>
+      <p>I'm looking for a Web Developer role. Send me an email or find me online.</p>
+      <a class="button" href="mailto:mahabubunnisa603@gmail.com">mahabubunnisa603@gmail.com</a>
+      <p class="links">
+        <a href="https://linkedin.com/in/mahabubunnisa-sheik">LinkedIn</a>
+        <a href="https://github.com/mahabubunnisa">GitHub</a>
+      </p>
     </section>
+
   </main>
 
   <footer>
-    <div class="wrap">© 2026 Mahabubunnisa Sheik</div>
+    <p>&copy; <span id="year"></span> Mahabubunnisa Sheik</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 
 </html>
